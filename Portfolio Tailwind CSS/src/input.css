@@ -1,0 +1,147 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Caveat:wght@700&family=Roboto:wght@300&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  html{
+    font-family: 'Caveat','Roboto';
+  }
+}
+
+.heading{
+  @apply mt-10 text-5xl  text-white font-bold md:text-5xl md:px-20 md:mt-20 font-[Caveat];
+}
+
+.navs{
+  @apply text-2xl md:hover:text-pink transition-transform transform hover:scale-125 duration-200 font-[Caveat];
+}
+
+
+.wrapper{
+  display: flex;
+}
+.wrapper .static-txt{
+  
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #FC6D6D;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  border-left: 2px solid #FC6D6D;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+
+@media (min-width:769px) {
+  #section{
+    position: relative;
+    bottom: 200px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+    .wrapper .static-txt {
+      font-size: 40px; 
+       font-weight: 100; 
+       
+    }
+  .dynamic-txts{
+    position: relative;
+    left: 0px;
+    top:-18px;
+  }
+    .dynamic-txts li {
+      font-size: 40px; 
+      font-weight: 100;
+    }
+
+  
+    .dynamic-txts li span::after{
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        background: black;
+        border-left: 2px solid #FC6D6D;
+        animation: typing 3s steps(10) infinite;
+      }
+  
+      nav .fa-solid{
+        display: block;
+        font-size: 25px;
+      }
+    
+      nav ul{
+        background: #FC6D6D;
+        position: fixed;
+        top: 0;
+        right: -150px ;
+        width: 150px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+      }
+
+      .fa-xmark{
+        position: relative;
+        bottom: 300px;
+        left:100px;
+      }
+
+      nav ul li{
+        display: block;
+        margin: 25px;
+      }
+
+      nav ul .fa{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+      }
+  }
+
+ 
